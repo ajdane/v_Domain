@@ -16,8 +16,8 @@ node 'default' {
       configure              => present,
       configureflag          => true,
       domain                 => 'forest',
-      domainname             => 'aej.local',
-      netbiosdomainname      => 'aej',
+      domainname             => 'vagrant.local',
+      netbiosdomainname      => 'vagrant',
       domainlevel            => '6',
       forestlevel            => '6',
       databasepath           => 'c:\\windows\\ntds',
@@ -26,7 +26,7 @@ node 'default' {
       installtype            => 'domain',
       dsrmpassword           => 'Vagran7*',
       installdns             => 'yes',
-      localadminpassword     => 'Vagran7*',
+      localadminpassword     => 'Vagrant',
     }
 
 }
