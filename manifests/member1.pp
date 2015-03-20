@@ -8,11 +8,16 @@ node 'default' {
 		ensure => latest,
 		provider => 'chocolatey'
 	}
-	class {'joindomain':
-		domain   => 'aej.local',
-		username => 'administrator',
-		password => 'vagran7*',
-	}
-	
+
+	class { 'domain_membership':
+      domain       => 'vagrant.local',
+      username     => 'Administrator',
+      password     => 'Vagrant',
+      join_options => '39',
+    }
+
+	reboot { 'after':
+  		when       => pending,
+	}	
 
 }

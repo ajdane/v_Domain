@@ -36,7 +36,8 @@ Vagrant.configure(2) do |config|
 		member1.vm.provision :shell, inline: "puppet module install --force joshcooper/powershell"
 		member1.vm.provision :shell, inline: "puppet module install --force puppetlabs/stdlib"
 		member1.vm.provision :shell, inline: "puppet module install --force puppetlabs/reboot"
-		member1.vm.provision :shell, inline: "puppet module install C:\vagrant\modules\puppet-module-joindomain.tar.gz"
+		member1.vm.provision :shell, inline: "puppet module install --force trlinkin/domain_membership"
+		member1.vm.provision :shell, inline: "powershell.exe C:\vagrant\Powershell\Set-DNSaddresses.ps1"
 		member1.vm.provision "puppet" do |puppet| 
 			puppet.manifest_file = "member1.pp"
 		end
