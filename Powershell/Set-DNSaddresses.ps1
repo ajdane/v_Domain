@@ -1,0 +1,1 @@
+﻿Set-DnsClientServerAddress -InterfaceIndex (Get-NetIPAddress | where {$_.IPAddress -like "192.168.33*"}).ifindex -ServerAddresses ("192.168.33.10")
